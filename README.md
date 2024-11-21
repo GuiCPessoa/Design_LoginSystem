@@ -1,4 +1,4 @@
-# Design Login System
+# Login Design System
 Creation of a login interface, concept created in Figma.
 
 
@@ -7,7 +7,7 @@ Creation of a login interface, concept created in Figma.
 ## :rocket: Technologies Used 
 <div align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=react,typescript,figma,js,html,css" />
+    <img src="https://skillicons.dev/icons?i=react,typescript,figma,js,html,css,tailwind" />
   </a>
 </div>
 
