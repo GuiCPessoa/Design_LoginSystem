@@ -9,11 +9,11 @@ export interface TextProps {
 }
 
 export function Text({ size = 'md', children, asChild }: TextProps) {
-    const Comp = asChild ? Slot : 'span'
+    const Comp = asChild ? Slot : 'span';
 
     return (
         <Comp className={clsx(
-            'text-gray-900,font-sans',
+            'text-gray-900 font-sans',
         {
             'text-xs': size === 'sm',
             'text-sm' : size === 'md',
