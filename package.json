@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "deploy-storybook": "storybook-to-ghpages --ci --existing-output-dir=storybook-static --git-remote-url=https://x-access-token:${GITHUB_TOKEN}@github.com/GuiCPessoa/Login_DesignSystem.git"
+    "deploy-storybook": "storybook-to-ghpages --ci --existing-output-dir=storybook-static"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.2",
