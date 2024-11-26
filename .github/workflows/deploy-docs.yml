@@ -5,9 +5,6 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write  # Garante que o workflow tenha permissões para realizar operações de escrita
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -19,24 +16,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20.5.1
-          cache: 'npm'
+          node-version: 16
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Build Storybook
         run: npm run build-storybook
 
-      - name: Configure Git
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "GuiCPessoa"
-          git config --global user.email "guipessoagith@gmail.com"
-          git remote set-url origin https://$GH_TOKEN@github.com/${{ github.repository }}.git
-
       - name: Deploy Storybook
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
