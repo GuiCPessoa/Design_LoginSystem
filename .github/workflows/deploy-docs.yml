@@ -32,8 +32,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions@github.com"
+          git config --global user.name "GuiCPessoa"
+          git config --global user.email "guipessoagith@gmail.com"
           git remote set-url origin https://$GH_TOKEN@github.com/${{ github.repository }}.git
 
       - name: Deploy Storybook
